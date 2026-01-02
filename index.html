@@ -288,17 +288,17 @@
 <body>
     <div class="container">
         <div class="config-section">
-            <h3>Ã°ÂÂÂ§ ConfiguraÃÂ§ÃÂ£o GitHub (para salvar alteraÃÂ§ÃÂµes)</h3>
+            <h3>🔧 Configuração GitHub (para salvar alterações)</h3>
             <div class="config-grid">
                 <input type="password" id="githubToken" class="config-input" placeholder="GitHub Token" value="">
                 <input type="text" id="githubRepo" class="config-input" placeholder="usuario/repositorio" value="tthiagomendes/grupos-whatsapp">
                 <input type="text" id="githubFile" class="config-input" placeholder="index.html" value="index.html">
             </div>
-            <button class="verify-btn" onclick="saveGithubConfig()">Ã°ÂÂÂ¾ Salvar ConfiguraÃÂ§ÃÂ£o</button>
+            <button class="verify-btn" onclick="saveGithubConfig()">💾 Salvar Configuração</button>
         </div>
 
         <div class="header">
-            <h1>Ã°ÂÂÂ Todos os Links (36)</h1>
+            <h1>📋 Todos os Links (36)</h1>
         </div>
 
         <div class="links-list" id="linksList">
@@ -310,42 +310,42 @@
 
     <script>
         const links = [
-            { id: 1, name: "Oportunidades RH #001", url: "https://chat.whatsapp.com/DLoUQp9Bc5I9y9rpBS2v1h" },
-            { id: 2, name: "Oportunidades RH #002", url: "https://chat.whatsapp.com/FWvYtNBJj08CRhPVpkCCSn" },
-            { id: 3, name: "Oportunidades RH #003", url: "https://chat.whatsapp.com/GBiuSDtircjAeO4djVaBO6" },
-            { id: 4, name: "Oportunidades RH #004", url: "https://chat.whatsapp.com/LfPhfdP4WJt7tZ8tQlx8oX" },
-            { id: 5, name: "Oportunidades RH #005", url: "https://chat.whatsapp.com/DHEgPr9ar1GE8PPATxpwUS" },
-            { id: 6, name: "Oportunidades RH #006", url: "https://chat.whatsapp.com/Gkpm8argZaG2F3tjjXQ0Am" },
-            { id: 7, name: "Oportunidades RH #007", url: "https://chat.whatsapp.com/HyKqwIcQTsW8Nz4AxD0u7x" },
-            { id: 8, name: "Oportunidades RH #008", url: "https://chat.whatsapp.com/F6bYNKunSA43cMHIV0OuM2" },
-            { id: 9, name: "Oportunidades RH #009", url: "https://chat.whatsapp.com/GYMtcnMtgvCK8wEkPPmWiS" },
-            { id: 10, name: "Oportunidades RH #010", url: "https://chat.whatsapp.com/Jg5Zy7oqw39HIqxdNTiFOt" },
-            { id: 11, name: "Oportunidades RH #011", url: "https://chat.whatsapp.com/L6CZtHcn26X9BvRsDsm5d4" },
-            { id: 12, name: "Oportunidades RH #012", url: "https://chat.whatsapp.com/GjkJlAEBi4NEm2q1p65ZbR" },
-            { id: 13, name: "Oportunidades RH #013", url: "https://chat.whatsapp.com/JeYpIPmLGFMFRTvz5MBTzL" },
-            { id: 14, name: "Oportunidades RH #014", url: "https://chat.whatsapp.com/JIcvRVqqaKe19XMIREcccc" },
-            { id: 15, name: "Oportunidades RH #015", url: "https://chat.whatsapp.com/IOIOfojDicnLsnQ91t94rd" },
-            { id: 16, name: "Oportunidades RH #016", url: "https://chat.whatsapp.com/BjZVHc1FSx5GkqbHYhJyAK" },
-            { id: 17, name: "Oportunidades RH #017", url: "https://chat.whatsapp.com/CN8uS6M7qRW7Ih8mEOFDe5" },
-            { id: 18, name: "Oportunidades RH #018", url: "https://chat.whatsapp.com/KT7WtXKbwML28k9veTiTj2" },
-            { id: 19, name: "Oportunidades RH #019", url: "https://chat.whatsapp.com/ERrwqBgkr9JKhVxc8NfXEZ" },
-            { id: 20, name: "Oportunidades RH #020", url: "https://chat.whatsapp.com/C22vxSIFXKQCwXXLWo4TYZ" },
-            { id: 21, name: "Empregos no Brasil #01", url: "https://chat.whatsapp.com/G2oXeDOS6N17EVOuehjhdh" },
-            { id: 22, name: "Empregos no Brasil #02", url: "https://chat.whatsapp.com/LaoPqiYteE0Cc2kMLVwz0M" },
-            { id: 23, name: "Empregos no Brasil #03", url: "https://chat.whatsapp.com/Lv8aalCQq8G9rdwyjOhzpN" },
-            { id: 24, name: "Empregos no Brasil #04", url: "https://chat.whatsapp.com/JyV3vNN5o1OIk2cODdS6Ai" },
-            { id: 25, name: "Empregos no Brasil #05", url: "https://chat.whatsapp.com/CC7qR8V42kSAuFsV8v3eqj" },
-            { id: 26, name: "Empregos no Brasil #06", url: "https://chat.whatsapp.com/FKSFA2lEr7xEGdGkGdYfj9" },
-            { id: 27, name: "Empregos no Brasil #07", url: "https://chat.whatsapp.com/INLIGaKtQkA7TfkRe5EisS" },
-            { id: 28, name: "Empregos no Brasil #08", url: "https://chat.whatsapp.com/FY3Iwz5DKZI96VJismNlsu" },
-            { id: 29, name: "Empregos no Brasil #09", url: "https://chat.whatsapp.com/JCBmjkJgmnuAUNrYxC6LQJ" },
-            { id: 30, name: "Empregos no Brasil #10", url: "https://chat.whatsapp.com/ImWXbkyooKY3RV4bqNeAvh" },
-            { id: 31, name: "Empregos no Brasil #11", url: "https://chat.whatsapp.com/F1s0DgLo9vZ5oWEhTai5G1" },
-            { id: 32, name: "Empregos no Brasil #12", url: "https://chat.whatsapp.com/CsciRJ1nMcn142ak9ODOy8" },
-            { id: 33, name: "Empregos no Brasil #13", url: "https://chat.whatsapp.com/HGoZFQjgZEPIhnKBP3t7c6" },
-            { id: 34, name: "Empregos no Brasil #14", url: "https://chat.whatsapp.com/BtIsOI1qM9GGUgtgZOgr9M" },
-            { id: 35, name: "Empregos no Brasil #15", url: "https://chat.whatsapp.com/GceWIKViYic9bEhYGE9Uh3" },
-            { id: 36, name: "Empregos no Brasil #16", url: "https://chat.whatsapp.com/FRO6VsDmwHaFelJ9tyqkkQ" }
+            { id: 1, name: "Empregos no Brasil #01", url: "https://chat.whatsapp.com/G2oXeDOS6N17EVOuehjhdh" },
+            { id: 2, name: "Empregos no Brasil #02", url: "https://chat.whatsapp.com/LaoPqiYteE0Cc2kMLVwz0M" },
+            { id: 3, name: "Empregos no Brasil #03", url: "https://chat.whatsapp.com/Lv8aalCQq8G9rdwyjOhzpN" },
+            { id: 4, name: "Empregos no Brasil #04", url: "https://chat.whatsapp.com/JyV3vNN5o1OIk2cODdS6Ai" },
+            { id: 5, name: "Empregos no Brasil #05", url: "https://chat.whatsapp.com/CC7qR8V42kSAuFsV8v3eqj" },
+            { id: 6, name: "Empregos no Brasil #06", url: "https://chat.whatsapp.com/FKSFA2lEr7xEGdGkGdYfj9" },
+            { id: 7, name: "Empregos no Brasil #07", url: "https://chat.whatsapp.com/INLIGaKtQkA7TfkRe5EisS" },
+            { id: 8, name: "Empregos no Brasil #08", url: "https://chat.whatsapp.com/FY3Iwz5DKZI96VJismNlsu" },
+            { id: 9, name: "Empregos no Brasil #09", url: "https://chat.whatsapp.com/JCBmjkJgmnuAUNrYxC6LQJ" },
+            { id: 10, name: "Empregos no Brasil #10", url: "https://chat.whatsapp.com/ImWXbkyooKY3RV4bqNeAvh" },
+            { id: 11, name: "Empregos no Brasil #11", url: "https://chat.whatsapp.com/F1s0DgLo9vZ5oWEhTai5G1" },
+            { id: 12, name: "Empregos no Brasil #12", url: "https://chat.whatsapp.com/CsciRJ1nMcn142ak9ODOy8" },
+            { id: 13, name: "Empregos no Brasil #13", url: "https://chat.whatsapp.com/HGoZFQjgZEPIhnKBP3t7c6" },
+            { id: 14, name: "Empregos no Brasil #14", url: "https://chat.whatsapp.com/BtIsOI1qM9GGUgtgZOgr9M" },
+            { id: 15, name: "Empregos no Brasil #15", url: "https://chat.whatsapp.com/GceWIKViYic9bEhYGE9Uh3" },
+            { id: 16, name: "Empregos no Brasil #16", url: "https://chat.whatsapp.com/FRO6VsDmwHaFelJ9tyqkkQ" },
+            { id: 17, name: "Oportunidades RH #001", url: "https://chat.whatsapp.com/DLoUQp9Bc5I9y9rpBS2v1h" },
+            { id: 18, name: "Oportunidades RH #002", url: "https://chat.whatsapp.com/FWvYtNBJj08CRhPVpkCCSn" },
+            { id: 19, name: "Oportunidades RH #003", url: "https://chat.whatsapp.com/GBiuSDtircjAeO4djVaBO6" },
+            { id: 20, name: "Oportunidades RH #004", url: "https://chat.whatsapp.com/LfPhfdP4WJt7tZ8tQlx8oX" },
+            { id: 21, name: "Oportunidades RH #005", url: "https://chat.whatsapp.com/DHEgPr9ar1GE8PPATxpwUS" },
+            { id: 22, name: "Oportunidades RH #006", url: "https://chat.whatsapp.com/Gkpm8argZaG2F3tjjXQ0Am" },
+            { id: 23, name: "Oportunidades RH #007", url: "https://chat.whatsapp.com/HyKqwIcQTsW8Nz4AxD0u7x" },
+            { id: 24, name: "Oportunidades RH #008", url: "https://chat.whatsapp.com/F6bYNKunSA43cMHIV0OuM2" },
+            { id: 25, name: "Oportunidades RH #009", url: "https://chat.whatsapp.com/GYMtcnMtgvCK8wEkPPmWiS" },
+            { id: 26, name: "Oportunidades RH #010", url: "https://chat.whatsapp.com/Jg5Zy7oqw39HIqxdNTiFOt" },
+            { id: 27, name: "Oportunidades RH #011", url: "https://chat.whatsapp.com/L6CZtHcn26X9BvRsDsm5d4" },
+            { id: 28, name: "Oportunidades RH #012", url: "https://chat.whatsapp.com/GjkJlAEBi4NEm2q1p65ZbR" },
+            { id: 29, name: "Oportunidades RH #013", url: "https://chat.whatsapp.com/JeYpIPmLGFMFRTvz5MBTzL" },
+            { id: 30, name: "Oportunidades RH #014", url: "https://chat.whatsapp.com/JIcvRVqqaKe19XMIREcccc" },
+            { id: 31, name: "Oportunidades RH #015", url: "https://chat.whatsapp.com/IOIOfojDicnLsnQ91t94rd" },
+            { id: 32, name: "Oportunidades RH #016", url: "https://chat.whatsapp.com/BjZVHc1FSx5GkqbHYhJyAK" },
+            { id: 33, name: "Oportunidades RH #017", url: "https://chat.whatsapp.com/CN8uS6M7qRW7Ih8mEOFDe5" },
+            { id: 34, name: "Oportunidades RH #018", url: "https://chat.whatsapp.com/KT7WtXKbwML28k9veTiTj2" },
+            { id: 35, name: "Oportunidades RH #019", url: "https://chat.whatsapp.com/ERrwqBgkr9JKhVxc8NfXEZ" },
+            { id: 36, name: "Oportunidades RH #020", url: "https://chat.whatsapp.com/C22vxSIFXKQCwXXLWo4TYZ" }
         ];
 
         let githubConfig = {
@@ -376,10 +376,10 @@
                     </div>
                     <div class="link-actions">
                         <button class="action-btn open" onclick="window.open('${link.url}', '_blank')">
-                            Ã°ÂÂÂ Abrir
+                            🔗 Abrir
                         </button>
                         <button class="action-btn edit" onclick="editLink(${link.id})">
-                            Ã¢ÂÂÃ¯Â¸Â Editar
+                            ✏️ Editar
                         </button>
                     </div>
                     <div class="edit-form" id="edit-${link.id}">
@@ -390,10 +390,10 @@
                                placeholder="Cole o novo link do WhatsApp">
                         <div class="edit-actions">
                             <button class="action-btn save" onclick="saveLink(${link.id})">
-                                Ã°ÂÂÂ¾ Salvar
+                                💾 Salvar
                             </button>
                             <button class="action-btn cancel" onclick="cancelEdit(${link.id})">
-                                Ã¢ÂÂ Cancelar
+                                ❌ Cancelar
                             </button>
                         </div>
                     </div>
@@ -418,12 +418,12 @@
             const file = document.getElementById('githubFile').value.trim();
 
             if (!token || !repo || !file) {
-                showStatus('error', 'Ã¢ÂÂ Ã¯Â¸Â Preencha todos os campos!');
+                showStatus('error', '⚠️ Preencha todos os campos!');
                 return;
             }
 
             if (!repo.includes('/')) {
-                showStatus('error', 'Ã¢ÂÂ Ã¯Â¸Â Formato do repositÃÂ³rio invÃÂ¡lido! Use: usuario/repositorio');
+                showStatus('error', '⚠️ Formato do repositório inválido! Use: usuario/repositorio');
                 return;
             }
 
@@ -432,7 +432,7 @@
             localStorage.setItem('github_repo', repo);
             localStorage.setItem('github_file', file);
 
-            showStatus('success', 'Ã¢ÂÂ ConfiguraÃÂ§ÃÂ£o salva com sucesso!');
+            showStatus('success', '✅ Configuração salva com sucesso!');
         }
 
         async function saveLink(id) {
@@ -445,16 +445,16 @@
             }
 
             if (!newUrl.includes('chat.whatsapp.com/')) {
-                showStatus('error', 'Ã¢ÂÂ Ã¯Â¸Â Link invÃÂ¡lido! Use um link do WhatsApp.');
+                showStatus('error', '⚠️ Link inválido! Use um link do WhatsApp.');
                 return;
             }
 
             if (!githubConfig.token || !githubConfig.repo) {
-                showStatus('error', 'Ã¢ÂÂ Ã¯Â¸Â Configure o GitHub primeiro!');
+                showStatus('error', '⚠️ Configure o GitHub primeiro!');
                 return;
             }
 
-            showStatus('info', 'Ã°ÂÂÂ Atualizando no GitHub...');
+            showStatus('info', '🔄 Atualizando no GitHub...');
 
             try {
                 // 1. Buscar arquivo atual
@@ -472,7 +472,7 @@
                 const fileData = await getResponse.json();
                 let content = atob(fileData.content);
 
-                // 2. Atualizar link no conteÃÂºdo
+                // 2. Atualizar link no conteúdo
                 content = content.replace(link.url, newUrl);
 
                 // 3. Fazer commit
@@ -496,11 +496,11 @@
 
                 // 4. Atualizar localmente
                 link.url = newUrl;
-                showStatus('success', 'Ã¢ÂÂ Link atualizado com sucesso!');
+                showStatus('success', '✅ Link atualizado com sucesso!');
                 renderLinks();
 
             } catch (error) {
-                showStatus('error', `Ã¢ÂÂ Erro: ${error.message}`);
+                showStatus('error', `❌ Erro: ${error.message}`);
             }
         }
 
