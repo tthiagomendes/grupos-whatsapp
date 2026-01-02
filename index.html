@@ -288,17 +288,17 @@
 <body>
     <div class="container">
         <div class="config-section">
-            <h3>ð§ ConfiguraÃ§Ã£o GitHub (para salvar alteraÃ§Ãµes)</h3>
+            <h3>Ã°ÂÂÂ§ ConfiguraÃÂ§ÃÂ£o GitHub (para salvar alteraÃÂ§ÃÂµes)</h3>
             <div class="config-grid">
                 <input type="password" id="githubToken" class="config-input" placeholder="GitHub Token" value="">
                 <input type="text" id="githubRepo" class="config-input" placeholder="usuario/repositorio" value="tthiagomendes/grupos-whatsapp">
                 <input type="text" id="githubFile" class="config-input" placeholder="index.html" value="index.html">
             </div>
-            <button class="verify-btn" onclick="saveGithubConfig()">ð¾ Salvar ConfiguraÃ§Ã£o</button>
+            <button class="verify-btn" onclick="saveGithubConfig()">Ã°ÂÂÂ¾ Salvar ConfiguraÃÂ§ÃÂ£o</button>
         </div>
 
         <div class="header">
-            <h1>ð Todos os Links (36)</h1>
+            <h1>Ã°ÂÂÂ Todos os Links (36)</h1>
         </div>
 
         <div class="links-list" id="linksList">
@@ -310,7 +310,7 @@
 
     <script>
         const links = [
-            { id: 1, name: "Oportunidades RH #001", url: "https://chat.whatsapp.com/DLoUQp9Bc5I9y9rpBS" },
+            { id: 1, name: "Oportunidades RH #001", url: "https://chat.whatsapp.com/DLoUQp9Bc5I9y9rpBS2v1h" },
             { id: 2, name: "Oportunidades RH #002", url: "https://chat.whatsapp.com/FWvYtNBJj08CRhPVpkCCSn" },
             { id: 3, name: "Oportunidades RH #003", url: "https://chat.whatsapp.com/GBiuSDtircjAeO4djVaBO6" },
             { id: 4, name: "Oportunidades RH #004", url: "https://chat.whatsapp.com/LfPhfdP4WJt7tZ8tQlx8oX" },
@@ -376,10 +376,10 @@
                     </div>
                     <div class="link-actions">
                         <button class="action-btn open" onclick="window.open('${link.url}', '_blank')">
-                            ð Abrir
+                            Ã°ÂÂÂ Abrir
                         </button>
                         <button class="action-btn edit" onclick="editLink(${link.id})">
-                            âï¸ Editar
+                            Ã¢ÂÂÃ¯Â¸Â Editar
                         </button>
                     </div>
                     <div class="edit-form" id="edit-${link.id}">
@@ -390,10 +390,10 @@
                                placeholder="Cole o novo link do WhatsApp">
                         <div class="edit-actions">
                             <button class="action-btn save" onclick="saveLink(${link.id})">
-                                ð¾ Salvar
+                                Ã°ÂÂÂ¾ Salvar
                             </button>
                             <button class="action-btn cancel" onclick="cancelEdit(${link.id})">
-                                â Cancelar
+                                Ã¢ÂÂ Cancelar
                             </button>
                         </div>
                     </div>
@@ -418,12 +418,12 @@
             const file = document.getElementById('githubFile').value.trim();
 
             if (!token || !repo || !file) {
-                showStatus('error', 'â ï¸ Preencha todos os campos!');
+                showStatus('error', 'Ã¢ÂÂ Ã¯Â¸Â Preencha todos os campos!');
                 return;
             }
 
             if (!repo.includes('/')) {
-                showStatus('error', 'â ï¸ Formato do repositÃ³rio invÃ¡lido! Use: usuario/repositorio');
+                showStatus('error', 'Ã¢ÂÂ Ã¯Â¸Â Formato do repositÃÂ³rio invÃÂ¡lido! Use: usuario/repositorio');
                 return;
             }
 
@@ -432,7 +432,7 @@
             localStorage.setItem('github_repo', repo);
             localStorage.setItem('github_file', file);
 
-            showStatus('success', 'â ConfiguraÃ§Ã£o salva com sucesso!');
+            showStatus('success', 'Ã¢ÂÂ ConfiguraÃÂ§ÃÂ£o salva com sucesso!');
         }
 
         async function saveLink(id) {
@@ -445,16 +445,16 @@
             }
 
             if (!newUrl.includes('chat.whatsapp.com/')) {
-                showStatus('error', 'â ï¸ Link invÃ¡lido! Use um link do WhatsApp.');
+                showStatus('error', 'Ã¢ÂÂ Ã¯Â¸Â Link invÃÂ¡lido! Use um link do WhatsApp.');
                 return;
             }
 
             if (!githubConfig.token || !githubConfig.repo) {
-                showStatus('error', 'â ï¸ Configure o GitHub primeiro!');
+                showStatus('error', 'Ã¢ÂÂ Ã¯Â¸Â Configure o GitHub primeiro!');
                 return;
             }
 
-            showStatus('info', 'ð Atualizando no GitHub...');
+            showStatus('info', 'Ã°ÂÂÂ Atualizando no GitHub...');
 
             try {
                 // 1. Buscar arquivo atual
@@ -472,7 +472,7 @@
                 const fileData = await getResponse.json();
                 let content = atob(fileData.content);
 
-                // 2. Atualizar link no conteÃºdo
+                // 2. Atualizar link no conteÃÂºdo
                 content = content.replace(link.url, newUrl);
 
                 // 3. Fazer commit
@@ -496,11 +496,11 @@
 
                 // 4. Atualizar localmente
                 link.url = newUrl;
-                showStatus('success', 'â Link atualizado com sucesso!');
+                showStatus('success', 'Ã¢ÂÂ Link atualizado com sucesso!');
                 renderLinks();
 
             } catch (error) {
-                showStatus('error', `â Erro: ${error.message}`);
+                showStatus('error', `Ã¢ÂÂ Erro: ${error.message}`);
             }
         }
 
