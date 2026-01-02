@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verificador InstantÃ¢neo de Links</title>
+    <title>Verificador InstantÃÂ¢neo de Links</title>
     <style>
         * {
             margin: 0;
@@ -461,19 +461,19 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>â¡ Verificador InstantÃ¢neo de Links</h1>
+            <h1>Ã¢ÂÂ¡ Verificador InstantÃÂ¢neo de Links</h1>
             <p>Testa todos os 36 links simultaneamente e mostra resultado em segundos</p>
         </div>
 
         <div class="config-section">
-            <h3>ð§ ConfiguraÃ§Ã£o GitHub (para atualizar links automaticamente)</h3>
+            <h3>Ã°ÂÂÂ§ ConfiguraÃÂ§ÃÂ£o GitHub (para atualizar links automaticamente)</h3>
             <div class="config-grid">
                 <input type="password" id="githubToken" class="config-input" placeholder="GitHub Token (ghp_...)" value="">
-                <input type="text" id="githubRepo" class="config-input" placeholder="RepositÃ³rio (usuario/repositorio)" value="tthiagomendes/grupos-whatsapp">
+                <input type="text" id="githubRepo" class="config-input" placeholder="RepositÃÂ³rio (usuario/repositorio)" value="tthiagomendes/grupos-whatsapp">
                 <input type="text" id="githubFile" class="config-input" placeholder="Arquivo" value="index.html">
             </div>
             <button class="big-button" onclick="startCheck()" id="checkBtn">
-                ð Verificar Todos os Links Agora
+                Ã°ÂÂÂ Verificar Todos os Links Agora
             </button>
         </div>
 
@@ -491,20 +491,20 @@
                 </div>
                 <div class="summary-card ok">
                     <div class="summary-number" id="okCount">0</div>
-                    <div class="summary-label">â Funcionando</div>
+                    <div class="summary-label">Ã¢ÂÂ Funcionando</div>
                 </div>
                 <div class="summary-card suspicious">
                     <div class="summary-number" id="suspiciousCount">0</div>
-                    <div class="summary-label">â ï¸ Suspeitos</div>
+                    <div class="summary-label">Ã¢ÂÂ Ã¯Â¸Â Suspeitos</div>
                 </div>
                 <div class="summary-card error">
                     <div class="summary-number" id="errorCount">0</div>
-                    <div class="summary-label">â Com Problema</div>
+                    <div class="summary-label">Ã¢ÂÂ Com Problema</div>
                 </div>
             </div>
 
             <div class="ok-section">
-                <h3>ð Todos os Links (${checkResults.length})</h3>
+                <h3>Ã°ÂÂÂ Todos os Links (${checkResults.length})</h3>
                 <div class="ok-list" id="okList"></div>
             </div>
         </div>
@@ -565,7 +565,7 @@
             }
         });
 
-        // Iniciar verificaÃ§Ã£o
+        // Iniciar verificaÃÂ§ÃÂ£o
         async function startCheck() {
             // Salvar token
             const token = document.getElementById('githubToken').value.trim();
@@ -592,7 +592,7 @@
             try {
                 // Validar formato do link do WhatsApp
                 const isValidFormat = link.url.startsWith('https://chat.whatsapp.com/') && 
-                                    link.url.split('/').pop().length >= 15; // CÃ³digos do WhatsApp tÃªm 15+ caracteres
+                                    link.url.split('/').pop().length >= 15; // CÃÂ³digos do WhatsApp tÃÂªm 15+ caracteres
 
                 checkResults.push({
                     ...link,
@@ -620,7 +620,7 @@
             document.getElementById('suspiciousCount').textContent = suspicious.length;
             document.getElementById('errorCount').textContent = error.length;
 
-            // Mostrar TODOS os links com opÃ§Ã£o de editar
+            // Mostrar TODOS os links com opÃÂ§ÃÂ£o de editar
             const okList = document.getElementById('okList');
             okList.innerHTML = '';
             
@@ -636,10 +636,10 @@
                         </div>
                         <div class="link-actions-col">
                             <button class="action-btn open" onclick="window.open('${link.url}', '_blank')">
-                                ð Abrir
+                                Ã°ÂÂÂ Abrir
                             </button>
                             <button class="action-btn edit" onclick="editLink(${link.id})">
-                                âï¸ Editar
+                                Ã¢ÂÂÃ¯Â¸Â Editar
                             </button>
                         </div>
                     </div>
@@ -652,10 +652,10 @@
                                data-link-id="${link.id}">
                         <div class="edit-actions">
                             <button class="action-btn save" onclick="updateSingleLink(${link.id})">
-                                ð¾ Salvar
+                                Ã°ÂÂÂ¾ Salvar
                             </button>
                             <button class="action-btn cancel" onclick="cancelEdit(${link.id})">
-                                â Cancelar
+                                Ã¢ÂÂ Cancelar
                             </button>
                         </div>
                     </div>
@@ -666,42 +666,42 @@
             // Mostrar aviso se houver links com erro
             const problems = [...suspicious, ...error];
             if (problems.length > 0) {
-                showStatus('error', `â ï¸ ${problems.length} link(s) com formato invÃ¡lido! Verifique e atualize.`);
+                showStatus('error', `Ã¢ÂÂ Ã¯Â¸Â ${problems.length} link(s) com formato invÃÂ¡lido! Verifique e atualize.`);
             } else {
-                showStatus('success', 'ð Todos os links tÃªm formato vÃ¡lido!');
+                showStatus('success', 'Ã°ÂÂÂ Todos os links tÃÂªm formato vÃÂ¡lido!');
             }
         }
 
-        // Mostrar modo de ediÃ§Ã£o
+        // Mostrar modo de ediÃÂ§ÃÂ£o
         function editLink(linkId) {
             document.getElementById(`edit-${linkId}`).style.display = 'block';
         }
 
-        // Cancelar ediÃ§Ã£o
+        // Cancelar ediÃÂ§ÃÂ£o
         function cancelEdit(linkId) {
             document.getElementById(`edit-${linkId}`).style.display = 'none';
             const link = links.find(l => l.id === linkId);
             document.getElementById(`newlink-${linkId}`).value = link.url;
         }
 
-        // Atualizar um link especÃ­fico
+        // Atualizar um link especÃÂ­fico
         async function updateSingleLink(linkId) {
             const newUrl = document.getElementById(`newlink-${linkId}`).value.trim();
             const link = links.find(l => l.id === linkId);
             
-            // Se nÃ£o mudou, sÃ³ fecha o formulÃ¡rio
+            // Se nÃÂ£o mudou, sÃÂ³ fecha o formulÃÂ¡rio
             if (newUrl === link.url) {
                 cancelEdit(linkId);
                 return;
             }
             
             if (!newUrl) {
-                showStatus('error', 'â ï¸ Cole o novo link primeiro!');
+                showStatus('error', 'Ã¢ÂÂ Ã¯Â¸Â Cole o novo link primeiro!');
                 return;
             }
 
             if (!newUrl.includes('chat.whatsapp.com/')) {
-                showStatus('error', 'â ï¸ Link invÃ¡lido! Use um link do WhatsApp.');
+                showStatus('error', 'Ã¢ÂÂ Ã¯Â¸Â Link invÃÂ¡lido! Use um link do WhatsApp.');
                 return;
             }
 
@@ -717,11 +717,11 @@
             const file = document.getElementById('githubFile').value.trim();
 
             if (!token || !repo || !file) {
-                showStatus('error', 'â ï¸ Configure o GitHub primeiro!');
+                showStatus('error', 'Ã¢ÂÂ Ã¯Â¸Â Configure o GitHub primeiro!');
                 return;
             }
 
-            showStatus('info', 'ð Atualizando no GitHub...');
+            showStatus('info', 'Ã°ÂÂÂ Atualizando no GitHub...');
 
             try {
                 // 1. Buscar arquivo atual
@@ -739,7 +739,7 @@
                 const fileData = await getResponse.json();
                 let content = atob(fileData.content);
 
-                // 2. Atualizar os links no conteÃºdo
+                // 2. Atualizar os links no conteÃÂºdo
                 Object.keys(linksToUpdate).forEach(linkId => {
                     const oldLink = links.find(l => l.id == linkId);
                     const newLink = linksToUpdate[linkId];
@@ -765,7 +765,7 @@
                     throw new Error('Erro ao fazer commit no GitHub');
                 }
 
-                showStatus('success', `â ${Object.keys(linksToUpdate).length} link(s) atualizado(s) com sucesso!`);
+                showStatus('success', `Ã¢ÂÂ ${Object.keys(linksToUpdate).length} link(s) atualizado(s) com sucesso!`);
                 linksToUpdate = {};
                 
                 // Limpar inputs
@@ -774,7 +774,7 @@
                 setTimeout(() => location.reload(), 2000);
 
             } catch (error) {
-                showStatus('error', `â Erro: ${error.message}`);
+                showStatus('error', `Ã¢ÂÂ Erro: ${error.message}`);
             }
         }
 
